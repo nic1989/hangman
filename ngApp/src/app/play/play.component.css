@@ -1,0 +1,11 @@
+.w10{
+  width: 10px;
+}
+.point{
+  cursor: pointer;
+}
+.design {
+  border:4px ridge #000;
+  width: 35px;
+  text-align: center;
+}

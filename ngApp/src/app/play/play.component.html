@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row mx-0">
+        <h2 class="my-3">Category: {{category}}</h2>
+        <div class="w-100 mt-2">
+            <h4 class="mt-3">Guess the name</h4>
+            <div class="mb-3">
+              You have <span class="blockquote"><strong>{{totalCount}}</strong></span> clicks.
+            </div>
+            <div class="text-danger">
+                {{errorMsg}}
+            </div>
+            <p class="text-muted" *ngIf="subcatData$.hint"><strong>*Hint: </strong>{{subcatData$.hint}}</p>
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item w10" *ngFor="let blank of inputData; index as i">
+                  <span>{{blank}}</span>
+                </li>
+            </ul>
+            <ul class="list-inline">
+                <li class="list-inline-item w10" *ngFor="let valu of subCatname">
+                  <span *ngIf="valu !== ' '">_</span>
+                </li>
+            </ul>
+            <ul class="list-inline">
+                <li class="list-inline-item mb-2 design" *ngFor="let alpha of alphabets; index as i">
+                  <span class="point" (click)="matchValu(i)">{{alpha}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

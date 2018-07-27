@@ -1,0 +1,7 @@
+.startimg {
+  background-image: url('/assets/img/start_here.png');
+  height: 375px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
