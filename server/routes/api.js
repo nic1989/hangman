@@ -62,14 +62,14 @@ router.post('/subcategory/add', (req, res) => {
 
 router.get('/subcategory/:id', (req, res) => {
     let catid = req.params;
-    SubCategory.countDocuments({cat_id:catid.id}).exec(function (err, count) {
+    SubCategory.countDocuments({cat_id:catid.id}).exec( (err, count) => {
 
         // Get a random entry
         var random = Math.floor(Math.random() * count)
         
         // Again query all users but only fetch one offset by our random #
         SubCategory.findOne({cat_id:catid.id}).skip(random).exec(
-            function (err, result) {
+             (err, result) => {
                 if(err) {
                     console.log(err);
                 } else {
