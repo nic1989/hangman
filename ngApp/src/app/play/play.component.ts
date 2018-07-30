@@ -62,7 +62,7 @@ export class PlayComponent implements OnInit {
         let subcat_name = this.subcatData$.subcat_name;
         this.subCatname = subcat_name.split('');
         let uniqcount = subcat_name.toLowerCase().split('').filter(this.onlyUnique);
-        this.totalCount = uniqcount.length + 2;
+        this.totalCount = uniqcount.length + 3;
         this.actualCount = this.cleanArray(uniqcount);
         this.inputData = new Array(this.subCatname.length);
       },
@@ -88,13 +88,19 @@ export class PlayComponent implements OnInit {
     this.alphabets.splice(valu, 1);
 
     if (this.actualCount === this.clickCount) {
-      this._router.navigate(['/success']);
+      setTimeout( () => {
+        this._router.navigate(['/success']);
+      }, 1000);
     } else if (this.totalCount === 0) {
       if (this.actualCount === this.clickCount) {
-        this._router.navigate(['/success']);
+        setTimeout( () => {
+          this._router.navigate(['/success']);
+        }, 1000);
       } else {
         localStorage.setItem('name',  this.subcatData$.subcat_name);
-        this._router.navigate(['/fail/']);
+        setTimeout( () => {
+          this._router.navigate(['/fail/']);
+        }, 1000);
       }
     }
   }

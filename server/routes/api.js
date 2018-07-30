@@ -28,7 +28,7 @@ router.post('/category/add', (req, res) => {
         if (err){ 
             return console.error(err);
         } else {
-          res.status(200).send(cat);
+            res.status(200).send(cat);
         }
     });
 });

@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
       <div class="mt-2 w-100 text-center">
           <p>You loss</p>
           <p>Name was <strong>{{name}}</strong>
-          <p>Try Again</p>
+          <p><a routerLink="/quiz">Try Again</a></p>
       </div>
     </div>
   </div>
